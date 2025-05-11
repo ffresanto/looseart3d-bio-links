@@ -33,11 +33,20 @@ html, body {
   }
   
   .description {
-    max-width: 300px;
-    margin: 20px 0;
+    max-width: 500px;
+    margin: 0px 0;
     line-height: 1.5;
     color: #fff;
     font-size: 14px !important;
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+  .title{
+        font-size: 18px !important;
+        font-weight: 500;
   }
   
   .container-button {
