@@ -1,108 +1,116 @@
 /* Garante layout flexível com rodapé no fim e sem espaços extras */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-  
-    /* ✅ Aplicando background no body */
-    background-image: url('../img/background_desktop.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  /* Agora .main não precisa mais do background */
-  .main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-    margin-top: 25px;
-  }
-  
-  /* Centraliza e limita a largura */
-  .logo {
-    width: 220px;
-    max-width: 100%;
-  }
-  
-  .description {
-    max-width: 500px;
-    margin: 0px 0;
-    line-height: 1.5;
-    color: #fff;
-    font-size: 14px !important;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 
-    p {
-      margin-bottom: 30px;
-    }
+  /* ✅ Aplicando background no body */
+  background-image: url('../img/background_desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Agora .main não precisa mais do background */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* Centraliza e limita a largura */
+.logo {
+  width: 220px;
+  max-width: 100%;
+}
+
+.description {
+  max-width: 500px;
+  margin: 0px 0;
+  line-height: 1.5;
+  color: #fff;
+  font-size: 14px !important;
+
+  p {
+    margin-bottom: 30px;
+  }
+}
+
+.title {
+  font-size: 18px !important;
+  font-weight: 500;
+}
+
+.container-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.button {
+  position: relative;
+  /* permite posicionar o ícone */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px !important;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* ou outro tom ao passar o mouse */
+  transform: scale(1.03);
+  /* leve aumento */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  /* leve brilho */
+}
+
+.button .icon {
+  position: absolute;
+  left: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+/* Rodapé transparente sobre o fundo com imagem */
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: white;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  font-size: 12px !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url('../img/background-mobile.png');
   }
 
-  .title{
-        font-size: 18px !important;
-        font-weight: 500;
-  }
-  
-  .container-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 320px;
-  }
-  
-  .button {
-    position: relative; /* permite posicionar o ícone */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px 20px;
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
-    font-size: 16px !important;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    font-size: 14px;
-    overflow: hidden;
-  }
-
-  .button:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* ou outro tom ao passar o mouse */
-    transform: scale(1.03); /* leve aumento */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* leve brilho */
-  }
-  
-  .button .icon {
-    position: absolute;
-    left: 20px;
-    width: 25px;
-    height: 25px;
-  }
-  
-  /* Rodapé transparente sobre o fundo com imagem */
   .footer {
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-    color: white;
-    background-color: transparent;
-    width: 100%;
-    border: none;
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
-
-  @media (max-width: 768px) {
-    body {
-      background-image: url('../img/background-mobile.png');
-    }
-  }
-  
+}
