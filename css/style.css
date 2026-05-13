@@ -93,7 +93,7 @@ body::before {
 
 .eyebrow {
   margin: 0 0 10px;
-  color: var(--cyan);
+  color: #ffffff;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -103,11 +103,16 @@ body::before {
 h1 {
   margin: 0;
   font-family: "Poppins", Arial, sans-serif;
-  font-size: clamp(1.65rem, 5vw, 2.85rem);
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: 0;
+  font-size: clamp(1.7rem, 5.2vw, 3rem);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   white-space: nowrap;
+  color: transparent;
+  background: linear-gradient(90deg, #26b7ff 0%, #6aa7ff 28%, #c17cff 58%, #ff6da4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
   text-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
 }
 
