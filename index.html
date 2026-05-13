@@ -49,6 +49,19 @@
                     </span>
                     <span class="arrow" aria-hidden="true">→</span>
                 </a>
+
+                <button class="store-link share-link" type="button" data-share-url="https://looseart3d.com" aria-live="polite">
+                    <span class="link-icon share-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="img" focusable="false">
+                            <path d="M18 16.1c-1.1 0-2.1.5-2.7 1.3L8.9 13.7c.1-.3.1-.5.1-.7s0-.4-.1-.7l6.3-3.7c.7.8 1.7 1.3 2.8 1.3 2.1 0 3.8-1.7 3.8-3.8S20.1 2.3 18 2.3s-3.8 1.7-3.8 3.8c0 .2 0 .4.1.7L8 10.5C7.3 9.7 6.3 9.2 5.2 9.2 3.1 9.2 1.4 10.9 1.4 13s1.7 3.8 3.8 3.8c1.1 0 2.1-.5 2.8-1.3l6.3 3.8c0 .2-.1.4-.1.6 0 2.1 1.7 3.8 3.8 3.8s3.8-1.7 3.8-3.8-1.7-3.8-3.8-3.8Z" />
+                        </svg>
+                    </span>
+                    <span>
+                        <strong>Compartilhar página</strong>
+                        <small>Envie o link da Loose Art 3D</small>
+                    </span>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </button>
             </nav>
         </section>
     </main>
@@ -56,6 +69,44 @@
     <footer class="footer">
         Desenvolvido por Franccesco Felipe
     </footer>
+
+    <script>
+        const shareButton = document.querySelector(".share-link");
+
+        if (shareButton) {
+            const shareText = shareButton.querySelector("small");
+            const originalText = shareText.textContent;
+            const shareUrl = shareButton.dataset.shareUrl;
+
+            shareButton.addEventListener("click", async () => {
+                const shareData = {
+                    title: "Loose Art 3D",
+                    text: "Conheça a Loose Art 3D",
+                    url: shareUrl,
+                };
+
+                try {
+                    if (navigator.share) {
+                        await navigator.share(shareData);
+                        return;
+                    }
+
+                    await navigator.clipboard.writeText(shareUrl);
+                    shareText.textContent = "Link copiado!";
+                    window.setTimeout(() => {
+                        shareText.textContent = originalText;
+                    }, 2200);
+                } catch (error) {
+                    if (error.name !== "AbortError") {
+                        shareText.textContent = "Não foi possível compartilhar";
+                        window.setTimeout(() => {
+                            shareText.textContent = originalText;
+                        }, 2200);
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

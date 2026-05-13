@@ -37,7 +37,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 220% 220%, 150% 150%, 145% 145%, 160% 160%, 100% 100%;
-  animation: backgroundDrift 18s ease-in-out infinite alternate;
+  animation: backgroundDrift 9s ease-in-out infinite alternate;
 }
 
 body::before {
@@ -67,7 +67,7 @@ body::after {
   background-size: 150% 150%, 145% 145%, 160% 160%, 180% 180%;
   filter: blur(24px);
   opacity: 0.72;
-  animation: backgroundGlow 20s ease-in-out infinite alternate;
+  animation: backgroundGlow 10s ease-in-out infinite alternate;
 }
 
 @keyframes backgroundDrift {
@@ -224,7 +224,16 @@ h1 {
     linear-gradient(135deg, rgba(255, 138, 61, 0.24), rgba(251, 93, 168, 0.12)),
     var(--panel-strong);
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font: inherit;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.share-link {
+  width: 100%;
+  background:
+    linear-gradient(135deg, rgba(34, 211, 238, 0.24), rgba(106, 167, 255, 0.12)),
+    var(--panel-strong);
 }
 
 .store-link:hover,
@@ -254,6 +263,17 @@ h1 {
   height: 28px;
   object-fit: contain;
   display: block;
+}
+
+.share-icon {
+  background: linear-gradient(135deg, #22d3ee, #6aa7ff);
+}
+
+.share-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  fill: #ffffff;
 }
 
 .store-link strong,
