@@ -1,43 +1,63 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a1f35">
+    <meta name="description" content="Produtos criativos em impressão 3D feitos com cuidado pela Loose Art 3D.">
     <meta property="og:title" content="Loose Art 3D" />
-    <meta property="og:description" content="Produtos criativos feitos em impressão 3D! Aqui você encontra peças criativas, modernas e feitas com muito cuidado através da tecnologia da impressão 3D" />
-    <meta property="og:image" content="http://looseart3d.com/assets/logo_media.png" />
-    <meta property="og:url" content="http://looseart3d.com/" />
+    <meta property="og:description" content="Peças criativas, modernas e feitas com muito cuidado através da tecnologia da impressão 3D." />
+    <meta property="og:image" content="https://looseart3d.com/assets/logo_media.png" />
+    <meta property="og:url" content="https://looseart3d.com/" />
     <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="img/background_desktop.jpg" as="image" media="(min-width: 721px)">
+    <link rel="preload" href="img/background-mobile.jpg" as="image" media="(max-width: 720px)">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <title>Loose Art 3D - Produtos Criativos em Impressão 3D</title>
 </head>
 
 <body>
-    <div class="main">
-        <div class="logo">
-            <img src="img/logo.png" alt="Logo" class="logo" />
-        </div>
+    <main class="page-shell">
+        <section class="profile" aria-labelledby="store-title">
+            <div class="brand-mark" aria-hidden="true">
+                <img src="img/logo.png" alt="" width="500" height="500" fetchpriority="high" decoding="async">
+            </div>
 
-        <div class="description">
-            <p class="title">🎨 Loose Art 3D 🖌️</p>
-            <p>Bem-vindo! Aqui você encontra peças criativas, modernas e feitas com muito cuidado através da tecnologia da impressão 3D</p>
-            <p class="title-store">Confira nossas lojas online! 🛒</p>
-        </div>
+            <p class="eyebrow">Peças criativas em impressão 3D</p>
+            <h1 id="store-title">Loose Art 3D</h1>
+            <p class="intro">
+                Decoração, presentes e acessórios feitos com cuidado, acabamento caprichado e carinho em cada detalhe.
+            </p>
 
-        <div class="container-button">
-            <a href="https://shopee.com.br/looseart3d" class="button" target="_blank">
-              <img src="assets/shopee.png" alt="Ícone de sacola" class="icon" />
-              <span>Shopee</span>
-            </a>
-          </div>
-    </div>
+            <div class="highlights" aria-label="Destaques da loja">
+                <span>Feito sob demanda</span>
+                <span>Design criativo</span>
+                <span>Compra segura</span>
+            </div>
+
+            <nav class="links" aria-label="Links da Loose Art 3D">
+                <a href="https://shopee.com.br/looseart3d" class="store-link" target="_blank" rel="noopener noreferrer">
+                    <span class="link-icon">
+                        <img src="assets/shopee.png" alt="" width="30" height="30" loading="lazy" decoding="async">
+                    </span>
+                    <span>
+                        <strong>Comprar na Shopee</strong>
+                        <small>Veja produtos, preços e avaliações</small>
+                    </span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                </a>
+            </nav>
+        </section>
+    </main>
 
     <footer class="footer">
         Desenvolvido por Franccesco Felipe
-    </footer>      
+    </footer>
 </body>
 
 </html>
