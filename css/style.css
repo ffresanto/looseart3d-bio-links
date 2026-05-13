@@ -209,6 +209,8 @@ h1 {
 }
 
 .store-link {
+  -webkit-appearance: none;
+  appearance: none;
   min-height: 76px;
   padding: 14px 16px;
   display: grid;
@@ -266,6 +268,7 @@ h1 {
 }
 
 .share-icon {
+  color: #ffffff;
   background: linear-gradient(135deg, #22d3ee, #6aa7ff);
 }
 
@@ -273,7 +276,7 @@ h1 {
   width: 24px;
   height: 24px;
   display: block;
-  fill: #ffffff;
+  fill: currentColor;
 }
 
 .store-link strong,
