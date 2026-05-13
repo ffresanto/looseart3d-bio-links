@@ -100,7 +100,8 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   body,
-  body::after {
+  body::after,
+  h1 {
     animation: none;
   }
 }
@@ -171,10 +172,23 @@ h1 {
   text-transform: uppercase;
   white-space: nowrap;
   color: transparent;
-  background: linear-gradient(90deg, #26b7ff 0%, #6aa7ff 28%, #c17cff 58%, #ff6da4 100%);
+  background: linear-gradient(90deg, #26b7ff 0%, #6aa7ff 34%, #c17cff 62%, #ff6da4 100%);
+  background-size: 118% 100%;
+  background-position: 50% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   text-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+  animation: titleGradient 4s ease-in-out infinite alternate;
+}
+
+@keyframes titleGradient {
+  0% {
+    background-position: 44% 50%;
+  }
+
+  100% {
+    background-position: 56% 50%;
+  }
 }
 
 .intro {
@@ -307,14 +321,10 @@ h1 {
   font-weight: 800;
 }
 
-.arrow svg {
+.arrow img {
   width: 17px;
   height: 17px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  display: block;
 }
 
 .footer {
