@@ -17,10 +17,11 @@
 
 html {
   min-height: 100%;
+  background: var(--bg);
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -28,9 +29,15 @@ body {
   color: var(--text);
   font-family: "Poppins", Arial, sans-serif;
   background:
-    linear-gradient(115deg, rgba(3, 20, 37, 0.84), rgba(22, 34, 68, 0.58) 48%, rgba(106, 31, 67, 0.76)),
-    url("../img/background_desktop.jpg") center / cover no-repeat fixed,
+    linear-gradient(120deg, #041827 0%, #17365a 28%, #39275f 56%, #7a1d58 82%, #041827 100%),
+    radial-gradient(circle at 18% 14%, rgba(34, 211, 238, 0.34), transparent 28rem),
+    radial-gradient(circle at 82% 18%, rgba(255, 138, 61, 0.28), transparent 25rem),
+    radial-gradient(circle at 74% 78%, rgba(251, 93, 168, 0.36), transparent 30rem),
     var(--bg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 220% 220%, 150% 150%, 145% 145%, 160% 160%, 100% 100%;
+  animation: backgroundDrift 18s ease-in-out infinite alternate;
 }
 
 body::before {
@@ -39,9 +46,63 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 8%, rgba(34, 211, 238, 0.22), transparent 28rem),
-    radial-gradient(circle at 74% 64%, rgba(251, 93, 168, 0.2), transparent 24rem);
-  opacity: 0.9;
+    linear-gradient(115deg, rgba(3, 20, 37, 0.72), rgba(22, 34, 68, 0.38) 48%, rgba(106, 31, 67, 0.58)),
+    radial-gradient(circle at 50% 8%, rgba(34, 211, 238, 0.2), transparent 28rem),
+    radial-gradient(circle at 74% 64%, rgba(251, 93, 168, 0.18), transparent 24rem);
+  opacity: 0.92;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 22%, rgba(34, 211, 238, 0.12), transparent 36rem),
+    radial-gradient(ellipse at 78% 26%, rgba(255, 138, 61, 0.1), transparent 34rem),
+    radial-gradient(ellipse at 68% 78%, rgba(251, 93, 168, 0.16), transparent 38rem),
+    linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+  background-repeat: no-repeat;
+  background-size: 150% 150%, 145% 145%, 160% 160%, 180% 180%;
+  filter: blur(24px);
+  opacity: 0.72;
+  animation: backgroundGlow 20s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundDrift {
+  0% {
+    background-position: 0% 18%, 6% 18%, 100% 0%, 74% 100%, center;
+  }
+
+  50% {
+    background-position: 70% 42%, 24% 0%, 78% 26%, 100% 72%, center;
+  }
+
+  100% {
+    background-position: 100% 80%, 8% 32%, 92% 12%, 68% 86%, center;
+  }
+}
+
+@keyframes backgroundGlow {
+  0% {
+    background-position: 0% 8%, 100% 18%, 70% 100%, 0% 50%;
+  }
+
+  50% {
+    background-position: 22% 0%, 82% 34%, 100% 76%, 50% 50%;
+  }
+
+  100% {
+    background-position: 8% 24%, 96% 8%, 64% 88%, 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  body::after {
+    animation: none;
+  }
 }
 
 .page-shell {
@@ -236,9 +297,12 @@ h1 {
 @media (max-width: 720px) {
   body {
     background:
-      linear-gradient(150deg, rgba(5, 20, 36, 0.82), rgba(28, 36, 69, 0.62) 46%, rgba(101, 28, 72, 0.76)),
-      url("../img/background-mobile.jpg") center / cover no-repeat fixed,
+      linear-gradient(150deg, #041827 0%, #17365a 28%, #39275f 56%, #7a1d58 82%, #041827 100%),
+      radial-gradient(circle at 10% 12%, rgba(34, 211, 238, 0.3), transparent 18rem),
+      radial-gradient(circle at 88% 20%, rgba(255, 138, 61, 0.22), transparent 18rem),
+      radial-gradient(circle at 70% 84%, rgba(251, 93, 168, 0.34), transparent 22rem),
       var(--bg);
+    background-size: 220% 220%, 160% 160%, 155% 155%, 170% 170%, 100% 100%;
   }
 
   .page-shell {
