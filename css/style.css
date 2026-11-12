@@ -258,6 +258,12 @@ h1 {
     #080a12;
 }
 
+.shein-link {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 127, 168, 0.2)),
+    #171117;
+}
+
 .store-link:hover,
 .store-link:focus-visible {
   transform: translateY(-3px);
@@ -294,6 +300,10 @@ h1 {
 
 .tiktok-icon {
   background: linear-gradient(135deg, #25f4ee 0%, #0b0b12 48%, #fe2c55 100%);
+}
+
+.shein-icon {
+  background: linear-gradient(135deg, #ffffff, #f4a0bd);
 }
 
 .share-icon svg {
